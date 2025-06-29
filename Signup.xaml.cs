@@ -55,6 +55,8 @@
                 // If all fields are filled and passwords match, proceed with signup
                 await DisplayAlert("Success", "Signup successful!", "OK");
                 // Here you can add code to save the profile or navigate to another page
+                await Shell.Current.GoToAsync($"profilepage?Username={profile.Username}&Email={profile.Email}");
+
             }
         }
     }

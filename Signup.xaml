@@ -1,16 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Signup_Profile.MainPage">
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2021/maui/toolkit"
+             x:Class="Signup_Profile.Signup">
+
 
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <Entry Text="{Binding Username}"/>
-            <Entry Text="{Binding Email}"/>
-            <Entry Text="{Binding Password}"/>
-            <Entry Text="{Binding ConfirmPassword}"/>
+            <Label Text="Username" TextColor="Black" FontSize="32" HorizontalOptions="Center"/>
+            <Entry Text="{Binding Username}" x:Name="usernameEntry"/>
+            <Label x:Name="usernameError" Text="Username is required" TextColor="Red" IsVisible="False" FontSize="14" HorizontalOptions="Center"/>
+
+            <Label Text="Email" TextColor="Black" FontSize="32" HorizontalOptions="Center"/>
+            <Entry Text="{Binding Email}" x:Name="emailEntry"/>
+            <Label x:Name="emailError" Text="Email is required" TextColor="Red" IsVisible="False" FontSize="14" HorizontalOptions="Center"/>
+            
+            <Label Text="Password" TextColor="Black" FontSize="32" HorizontalOptions="Center"/>
+            <Entry Text="{Binding Password}" x:Name="passwordEntry" IsPassword="True"/>
+            <Label x:Name="passwordError" Text="Password is required" TextColor="Red" IsVisible="False" FontSize="14" HorizontalOptions="Center"/>
+            
+            <Label Text="Confirm Password" TextColor="Black" FontSize="32" HorizontalOptions="Center"/>
+            <Entry Text="{Binding ConfirmPassword}" x:Name="confirmPasswordEntry" IsPassword="True"/>
+            <Label x:Name="confirmPasswordError" Text="Passwords do not match" TextColor="Red" IsVisible="False" FontSize="14" HorizontalOptions="Center"/>
+            
+            <Button Text="Sign Up" Clicked="OnSignUpClicked"/>
         </VerticalStackLayout>
     </ScrollView>
 

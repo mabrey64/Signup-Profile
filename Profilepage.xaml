@@ -17,6 +17,8 @@
                 TextColor="Blue"
                 FontSize="24"
                 HorizontalOptions="Center" />
+            <Button Text="Sign-out"
+                    Clicked="OnSignout"/>
         </VerticalStackLayout>
         </ScrollView>
 </ContentPage>

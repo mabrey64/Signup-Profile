@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Signup_Profile
 {
+    // This is a class that represents a user profile in the signup process.
     internal class Profile
     {
         public string Username { get; set; }

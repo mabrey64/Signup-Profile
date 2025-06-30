@@ -45,6 +45,7 @@
                 return;
             }
 
+            // Check if passwords match and display an alert if they do not match
             if (!PasswordsMatch())
             {
                 await DisplayAlert("Error", "Passwords do not match.", "OK");
@@ -52,11 +53,9 @@
             }
             else
             {
-                // If all fields are filled and passwords match, proceed with signup
+                // If all fields are filled and passwords match, proceed with signup and navigates to the next page.
                 await DisplayAlert("Success", "Signup successful!", "OK");
-                // Here you can add code to save the profile or navigate to another page
                 await Shell.Current.GoToAsync($"profilepage?Username={profile.Username}&Email={profile.Email}");
-
             }
         }
     }
